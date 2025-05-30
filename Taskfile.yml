@@ -1,0 +1,9 @@
+version: "3"
+
+tasks:
+  generate:
+    aliases:
+      - gen
+    desc: "Generate go code from proto file, specify proto file path through env PROTO_PATH"
+    cmds:
+      - protoc -I proto {{.PROTO_PATH}} --go_out=./gen/go --go_opt=paths=source_relative --go-grpc_out=./gen/go --go-grpc_opt=paths=source_relative
