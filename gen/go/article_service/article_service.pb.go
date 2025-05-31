@@ -416,8 +416,9 @@ func (x *GetAllArticleResponse) GetArticles() []*ArticleForList {
 
 type UpdateArticleRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	Content       string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+	ArticleId     string                 `protobuf:"bytes,1,opt,name=article_id,json=articleId,proto3" json:"article_id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -450,6 +451,13 @@ func (x *UpdateArticleRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use UpdateArticleRequest.ProtoReflect.Descriptor instead.
 func (*UpdateArticleRequest) Descriptor() ([]byte, []int) {
 	return file_article_service_article_service_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *UpdateArticleRequest) GetArticleId() string {
+	if x != nil {
+		return x.ArticleId
+	}
+	return ""
 }
 
 func (x *UpdateArticleRequest) GetTitle() string {
@@ -688,10 +696,12 @@ const file_article_service_article_service_proto_rawDesc = "" +
 	"\barticles\x18\x01 \x03(\v2\x17.article.ArticleForListR\barticles\"\x16\n" +
 	"\x14GetAllArticleRequest\"L\n" +
 	"\x15GetAllArticleResponse\x123\n" +
-	"\barticles\x18\x01 \x03(\v2\x17.article.ArticleForListR\barticles\"F\n" +
-	"\x14UpdateArticleRequest\x12\x14\n" +
-	"\x05title\x18\x01 \x01(\tR\x05title\x12\x18\n" +
-	"\acontent\x18\x02 \x01(\tR\acontent\"\x17\n" +
+	"\barticles\x18\x01 \x03(\v2\x17.article.ArticleForListR\barticles\"e\n" +
+	"\x14UpdateArticleRequest\x12\x1d\n" +
+	"\n" +
+	"article_id\x18\x01 \x01(\tR\tarticleId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x18\n" +
+	"\acontent\x18\x03 \x01(\tR\acontent\"\x17\n" +
 	"\x15UpdateArticleResponse\"5\n" +
 	"\x14DeleteArticleRequest\x12\x1d\n" +
 	"\n" +
