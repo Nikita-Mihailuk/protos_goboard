@@ -6,7 +6,7 @@ option go_package = "nikita.mihailuk.article_service.v1;article_servicev1";
 
 import "google/protobuf/timestamp.proto";
 
-service User{
+service Article{
   rpc CreateArticle(CreateArticleRequest) returns (CreateArticleResponse);
   rpc GetArticleByID(GetArticleByIDRequest) returns (GetArticleByIDResponse);
   rpc GetArticlesByAuthorID(GetArticlesByAuthorIDRequest) returns (GetArticlesByAuthorIDResponse);
