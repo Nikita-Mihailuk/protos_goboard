@@ -716,8 +716,8 @@ const file_article_service_article_service_proto_rawDesc = "" +
 	"\n" +
 	"updated_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12\x1f\n" +
 	"\vauthor_name\x18\x05 \x01(\tR\n" +
-	"authorName2\x81\x04\n" +
-	"\x04User\x12N\n" +
+	"authorName2\x84\x04\n" +
+	"\aArticle\x12N\n" +
 	"\rCreateArticle\x12\x1d.article.CreateArticleRequest\x1a\x1e.article.CreateArticleResponse\x12Q\n" +
 	"\x0eGetArticleByID\x12\x1e.article.GetArticleByIDRequest\x1a\x1f.article.GetArticleByIDResponse\x12f\n" +
 	"\x15GetArticlesByAuthorID\x12%.article.GetArticlesByAuthorIDRequest\x1a&.article.GetArticlesByAuthorIDResponse\x12N\n" +
@@ -761,18 +761,18 @@ var file_article_service_article_service_proto_depIdxs = []int32{
 	12, // 3: article.GetAllArticleResponse.articles:type_name -> article.ArticleForList
 	13, // 4: article.ArticleForList.created_at:type_name -> google.protobuf.Timestamp
 	13, // 5: article.ArticleForList.updated_at:type_name -> google.protobuf.Timestamp
-	0,  // 6: article.User.CreateArticle:input_type -> article.CreateArticleRequest
-	2,  // 7: article.User.GetArticleByID:input_type -> article.GetArticleByIDRequest
-	4,  // 8: article.User.GetArticlesByAuthorID:input_type -> article.GetArticlesByAuthorIDRequest
-	6,  // 9: article.User.GetAllArticle:input_type -> article.GetAllArticleRequest
-	8,  // 10: article.User.UpdateArticle:input_type -> article.UpdateArticleRequest
-	10, // 11: article.User.DeleteArticle:input_type -> article.DeleteArticleRequest
-	1,  // 12: article.User.CreateArticle:output_type -> article.CreateArticleResponse
-	3,  // 13: article.User.GetArticleByID:output_type -> article.GetArticleByIDResponse
-	5,  // 14: article.User.GetArticlesByAuthorID:output_type -> article.GetArticlesByAuthorIDResponse
-	7,  // 15: article.User.GetAllArticle:output_type -> article.GetAllArticleResponse
-	9,  // 16: article.User.UpdateArticle:output_type -> article.UpdateArticleResponse
-	11, // 17: article.User.DeleteArticle:output_type -> article.DeleteArticleResponse
+	0,  // 6: article.Article.CreateArticle:input_type -> article.CreateArticleRequest
+	2,  // 7: article.Article.GetArticleByID:input_type -> article.GetArticleByIDRequest
+	4,  // 8: article.Article.GetArticlesByAuthorID:input_type -> article.GetArticlesByAuthorIDRequest
+	6,  // 9: article.Article.GetAllArticle:input_type -> article.GetAllArticleRequest
+	8,  // 10: article.Article.UpdateArticle:input_type -> article.UpdateArticleRequest
+	10, // 11: article.Article.DeleteArticle:input_type -> article.DeleteArticleRequest
+	1,  // 12: article.Article.CreateArticle:output_type -> article.CreateArticleResponse
+	3,  // 13: article.Article.GetArticleByID:output_type -> article.GetArticleByIDResponse
+	5,  // 14: article.Article.GetArticlesByAuthorID:output_type -> article.GetArticlesByAuthorIDResponse
+	7,  // 15: article.Article.GetAllArticle:output_type -> article.GetAllArticleResponse
+	9,  // 16: article.Article.UpdateArticle:output_type -> article.UpdateArticleResponse
+	11, // 17: article.Article.DeleteArticle:output_type -> article.DeleteArticleResponse
 	12, // [12:18] is the sub-list for method output_type
 	6,  // [6:12] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
