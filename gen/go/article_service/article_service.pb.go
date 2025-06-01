@@ -23,13 +23,14 @@ const (
 )
 
 type CreateArticleRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	AuthorName    string                 `protobuf:"bytes,2,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
-	AuthorId      int64                  `protobuf:"varint,3,opt,name=author_id,json=authorId,proto3" json:"author_id,omitempty"`
-	Content       string                 `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Title          string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	AuthorName     string                 `protobuf:"bytes,2,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
+	AuthorPhotoUrl string                 `protobuf:"bytes,3,opt,name=author_photo_url,json=authorPhotoUrl,proto3" json:"author_photo_url,omitempty"`
+	AuthorId       int64                  `protobuf:"varint,4,opt,name=author_id,json=authorId,proto3" json:"author_id,omitempty"`
+	Content        string                 `protobuf:"bytes,5,opt,name=content,proto3" json:"content,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *CreateArticleRequest) Reset() {
@@ -72,6 +73,13 @@ func (x *CreateArticleRequest) GetTitle() string {
 func (x *CreateArticleRequest) GetAuthorName() string {
 	if x != nil {
 		return x.AuthorName
+	}
+	return ""
+}
+
+func (x *CreateArticleRequest) GetAuthorPhotoUrl() string {
+	if x != nil {
+		return x.AuthorPhotoUrl
 	}
 	return ""
 }
@@ -171,14 +179,15 @@ func (x *GetArticleByIDRequest) GetArticleId() string {
 }
 
 type GetArticleByIDResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	AuthorName    string                 `protobuf:"bytes,2,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
-	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Title          string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	AuthorName     string                 `protobuf:"bytes,2,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
+	AuthorPhotoUrl string                 `protobuf:"bytes,3,opt,name=author_photo_url,json=authorPhotoUrl,proto3" json:"author_photo_url,omitempty"`
+	Content        string                 `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty"`
+	CreatedAt      *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt      *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *GetArticleByIDResponse) Reset() {
@@ -221,6 +230,13 @@ func (x *GetArticleByIDResponse) GetTitle() string {
 func (x *GetArticleByIDResponse) GetAuthorName() string {
 	if x != nil {
 		return x.AuthorName
+	}
+	return ""
+}
+
+func (x *GetArticleByIDResponse) GetAuthorPhotoUrl() string {
+	if x != nil {
+		return x.AuthorPhotoUrl
 	}
 	return ""
 }
@@ -670,26 +686,28 @@ var File_article_service_article_service_proto protoreflect.FileDescriptor
 
 const file_article_service_article_service_proto_rawDesc = "" +
 	"\n" +
-	"%article_service/article_service.proto\x12\aarticle\x1a\x1fgoogle/protobuf/timestamp.proto\"\x84\x01\n" +
+	"%article_service/article_service.proto\x12\aarticle\x1a\x1fgoogle/protobuf/timestamp.proto\"\xae\x01\n" +
 	"\x14CreateArticleRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1f\n" +
 	"\vauthor_name\x18\x02 \x01(\tR\n" +
-	"authorName\x12\x1b\n" +
-	"\tauthor_id\x18\x03 \x01(\x03R\bauthorId\x12\x18\n" +
-	"\acontent\x18\x04 \x01(\tR\acontent\"\x17\n" +
+	"authorName\x12(\n" +
+	"\x10author_photo_url\x18\x03 \x01(\tR\x0eauthorPhotoUrl\x12\x1b\n" +
+	"\tauthor_id\x18\x04 \x01(\x03R\bauthorId\x12\x18\n" +
+	"\acontent\x18\x05 \x01(\tR\acontent\"\x17\n" +
 	"\x15CreateArticleResponse\"6\n" +
 	"\x15GetArticleByIDRequest\x12\x1d\n" +
 	"\n" +
-	"article_id\x18\x01 \x01(\tR\tarticleId\"\xdf\x01\n" +
+	"article_id\x18\x01 \x01(\tR\tarticleId\"\x89\x02\n" +
 	"\x16GetArticleByIDResponse\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1f\n" +
 	"\vauthor_name\x18\x02 \x01(\tR\n" +
-	"authorName\x12\x18\n" +
-	"\acontent\x18\x03 \x01(\tR\acontent\x129\n" +
+	"authorName\x12(\n" +
+	"\x10author_photo_url\x18\x03 \x01(\tR\x0eauthorPhotoUrl\x12\x18\n" +
+	"\acontent\x18\x04 \x01(\tR\acontent\x129\n" +
 	"\n" +
-	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"created_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\";\n" +
+	"updated_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\";\n" +
 	"\x1cGetArticlesByAuthorIDRequest\x12\x1b\n" +
 	"\tauthor_id\x18\x01 \x01(\x03R\bauthorId\"T\n" +
 	"\x1dGetArticlesByAuthorIDResponse\x123\n" +
