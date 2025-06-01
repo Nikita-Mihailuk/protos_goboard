@@ -18,8 +18,9 @@ service Article{
 message CreateArticleRequest{
   string title = 1;
   string author_name = 2;
-  int64 author_id = 3;
-  string content = 4;
+  string author_photo_url = 3;
+  int64 author_id = 4;
+  string content = 5;
 }
 
 message CreateArticleResponse {}
@@ -32,9 +33,10 @@ message GetArticleByIDRequest{
 message GetArticleByIDResponse{
   string title = 1;
   string author_name = 2;
-  string content = 3;
-  google.protobuf.Timestamp created_at = 4;
-  google.protobuf.Timestamp updated_at = 5;
+  string author_photo_url = 3;
+  string content = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
 }
 
 message GetArticlesByAuthorIDRequest{
